@@ -1,0 +1,17 @@
+footer {
+  background-color: #ecb770;
+  color: #383535;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   padding: 5px 10px;
+    position: relative;
+  bottom: -220px;
+}
+footer span {
+  font-weight: bold;
+  color: var(--first-color);
+}
+footer .social-icon {
+  margin-top: 0px;
+}

@@ -1,0 +1,157 @@
+<!-- search -->
+
+<div class="search">
+  <div class="searchbyname">
+    <input
+      class="inp1"
+      type="text"
+      [(ngModel)]="searchName"
+      placeholder="Enter name"
+    />
+    <button mat-flat-button color="primary" (click)="search()">search</button>
+  </div>
+  <br />
+  <div class="searchbyprice">
+    <input
+      class="inp2"
+      type="text"
+      [(ngModel)]="searchByPrice"
+      placeholder="Enter price"
+    />
+    <button mat-flat-button color="primary" (click)="searchPrice()">
+      search
+    </button>
+  </div>
+  <br />
+  <button mat-flat-button color="primary" (click)="reset()">reset</button>
+</div>
+
+<!-- card -->
+<div class="container">
+  <div class="card" *ngFor="let item of tempArr">
+    <div class="img"><img [src]="item.images" /></div>
+    <h2>{{ item.title }}</h2>
+    <div class="des">
+      <p>
+        {{ item.description }}
+      </p>
+    </div>
+
+    <h3>
+      <span>{{ item.price }}</span> <span class="p"> EGP</span>
+    </h3>
+    <p *ngIf="item.available >= 5">available {{ item.available }}</p>
+    <p
+      [ngClass]="item.available < 5 ? 'aval' : 'not-aval'"
+      *ngIf="item.available < 5 && item.available > 0"
+    >
+      available {{ item.available }}
+    </p>
+    <p *ngIf="item.available == 0">out of stock</p>
+    <button mat-flat-button color="primary" (click)="addToCart(item)">
+      add to cart
+    </button>
+  </div>
+</div>
+<!-- form template driven -->
+<!-- <form #addform="ngForm">
+  <div>
+    <label for="name">title</label>
+    <input type="text" name="name" [(ngModel)]="name" />
+  </div>
+  <div>
+    <label for="id">id</label>
+    <input type="text" name="id" [(ngModel)]="id" />
+  </div>
+
+  <div>
+    <label for="src">image</label>
+    <input type="text" name="src" [(ngModel)]="src" />
+  </div>
+  <div>
+    <label for="desc">description</label>
+    <input type="text" name="desc" [(ngModel)]="desc" />
+  </div>
+  <div>
+    <label for="price">price</label>
+    <input type="text" name="price" [(ngModel)]="price" />
+  </div>
+  <div>
+    <label for="available">available</label>
+    <input type="text" name="available" [(ngModel)]="available" />
+  </div>
+
+  <button (click)="onsubmit()" mat-flat-button color="primary">add</button>
+</form> -->
+
+<!-- form reactive
+<form [formGroup]="myform">
+  <div>
+    <label for="name">title</label>
+    <input type="text" name="name" [(ngModel)]="name" formControlName="name" />
+  </div>
+  <div>
+    <label for="id">id</label>
+    <input type="text" name="id" [(ngModel)]="id" formControlName="id" />
+  </div>
+
+  <div>
+    <label for="src">image</label>
+    <input type="text" name="src" [(ngModel)]="src" formControlName="src" />
+  </div>
+  <div>
+    <label for="desc">description</label>
+    <input type="text" name="desc" [(ngModel)]="desc" formControlName="desc" />
+  </div>
+  <div>
+    <label for="price">price</label>
+    <input
+      type="text"
+      name="price"
+      [(ngModel)]="price"
+      formControlName="price"
+    />
+  </div>
+  <div>
+    <label for="available">available</label>
+    <input
+      type="text"
+      name="available"
+      [(ngModel)]="available"
+      formControlName="available"
+    />
+  </div>
+
+  <button (click)="onsubmit()" mat-flat-button color="primary">add</button>
+</form> -->
+
+<!--  form reactive second way -->
+<form [formGroup]="myform">
+  <div>
+    <label for="name">title</label>
+    <input type="text" name="name" formControlName="title" />
+  </div>
+  <div>
+    <label for="id">id</label>
+    <input type="text" name="id" formControlName="id" />
+  </div>
+
+  <div>
+    <label for="src">image</label>
+    <input type="text" name="src" formControlName="image" />
+  </div>
+  <div>
+    <label for="desc">description</label>
+    <input type="text" name="desc" formControlName="description" />
+  </div>
+  <div>
+    <label for="price">price</label>
+    <input type="text" name="price" formControlName="price" />
+  </div>
+  <div>
+    <label for="available">available</label>
+    <input type="text" name="available" formControlName="available" />
+  </div>
+
+  <button (click)="onsubmit()" mat-flat-button color="primary">add</button>
+</form>

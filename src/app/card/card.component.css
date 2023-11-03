@@ -1,0 +1,106 @@
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 20px;
+
+  }
+  .card {
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(1,1, 1, 15%);
+    border-radius: 10px;
+    margin: auto;
+    min-width: 300px;
+    max-width: 390px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .6s;
+  }
+  .card:hover {
+    transform: scale(1.03);
+
+}
+.container h3 .p {
+  color: #6e6d6c;
+  font-size: 11px;
+}
+.container h3 span {
+  font-size: 20px;
+}
+
+
+  .search {
+    width: 300px;
+    margin: auto;
+  }
+  .search input {
+    height: 30px;
+    padding: 10px;
+  }
+  .searchbyname button,.searchbyprice button {
+    margin-left: 10px;
+  }
+
+  .aval {
+    color: red;
+  }
+
+  .img {
+    width: 120px;
+    /* margin-top: 20px; */
+    display: inline-block;
+  }
+  img {
+    width: 100%;
+  }
+
+  .inp1,.inp2 {
+    height: 20px;
+    width: 200px;
+  }
+  form {
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+    /* border: 1px solid #6e6d6c ; */
+    margin-bottom: 10px;
+
+  }
+input{
+    color: rgb(0, 0, 0);
+    background-color: #e3e3eb;
+    outline: none;
+    margin-bottom: 4px;
+    width: 100%;
+    border: none;
+    height: 40px;
+    padding: 4px 0px 4px 4px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+label {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.desc p {
+  /* font-size: 12px; */
+}
+.des {
+  width: 80%;
+
+}
+@media(max-width:340px) {
+.card {
+  max-width: 200px;
+  min-width: 100px;
+}
+ }
+label {
+  padding: 5px;
+}

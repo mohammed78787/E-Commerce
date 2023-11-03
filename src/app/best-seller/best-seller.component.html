@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card" *ngFor="let item of products">
+    <div class="img"><img [src]="item.images" /></div>
+    <h2>{{ item.title }}</h2>
+    <p>
+      {{ item.description }}
+    </p>
+    <h3>
+      <span>{{ item.price }}</span> <span class="p"> EGP</span>
+    </h3>
+    <p *ngIf="item.available >= 5">available {{ item.available }}</p>
+    <p
+      [ngClass]="item.available < 5 ? 'aval' : 'not-aval'"
+      *ngIf="item.available < 5 && item.available > 0"
+    >
+      available {{ item.available }}
+    </p>
+    <p *ngIf="item.available == 0">out of stock</p>
+    <button mat-flat-button color="primary" (click)="addToCart(item)">
+      add to cart
+    </button>
+  </div>
+</div>
+
+<!-- <div *ngFor="let item of cartArr">
+  name: {{ item.name }} price: {{ item.price }}
+  <button (click)="deleteFromCart(item)">delete from cart</button>
+</div> -->
